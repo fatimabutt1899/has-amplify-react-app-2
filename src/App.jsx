@@ -27,7 +27,7 @@ import { handleSignUp } from './auth';
 import fanOnIcon from './icons/fanOn.gif';
 import fanOffIcon from './icons/fanOff.png';
 import bulbOnIcon from './icons/bulbOn.png';
-import bulbOffIcon from './icons/bulbOff.png';
+import bulbOffIcon from './icons/bulbOff.png'; 
 
 Amplify.configure(awsExports);
 
