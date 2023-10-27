@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "hasamplifyreactapp2",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authhasamplifyreactapp22b0a93f2",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

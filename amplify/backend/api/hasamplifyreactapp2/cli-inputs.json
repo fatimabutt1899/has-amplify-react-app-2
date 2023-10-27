@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "hasamplifyreactapp2",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authhasamplifyreactapp22b0a93f2"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2023-11-01T15:57:12.858Z",
+        "keyDescription": ""
+      }
+    ],
+    "conflictResolution": {}
+  }
+}
