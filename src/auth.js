@@ -17,7 +17,7 @@ export const handleSignUp = async () => {
       id: user.attributes.sub, // Use the user's ID as the database ID
       email: user.attributes.email,
     };
-
+ 
     // Call your GraphQL mutation to create the user in the database
     await API.graphql({ query: createUser, variables: { input } });
   } catch (error) {

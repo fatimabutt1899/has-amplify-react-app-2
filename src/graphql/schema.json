@@ -6,7 +6,7 @@
       },
       "mutationType" : {
         "name" : "Mutation"
-      },
+      }, 
       "subscriptionType" : {
         "name" : "Subscription"
       },

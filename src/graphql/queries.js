@@ -66,7 +66,7 @@ export const getDevice = /* GraphQL */ `
       owner
       __typename
     }
-  }
+  } 
 `;
 export const listDevices = /* GraphQL */ `
   query ListDevices(

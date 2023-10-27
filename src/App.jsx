@@ -42,7 +42,7 @@ function App() {
     fetchDevices(); 
     handleSignUp();
   },[])
-
+ 
   const fetchDevices = async () => {
     try {
       const user = await Auth.currentAuthenticatedUser();

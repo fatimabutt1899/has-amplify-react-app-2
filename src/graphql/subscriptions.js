@@ -8,7 +8,7 @@ export const onCreateUser = /* GraphQL */ `
   ) {
     onCreateUser(filter: $filter, owner: $owner) {
       id
-      email
+      email 
       devices {
         nextToken
         __typename
