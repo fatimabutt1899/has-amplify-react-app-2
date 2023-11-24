@@ -24,6 +24,12 @@
           "deploymentBucketName": "amplify-hasamplifyreactapp2-dev-193318-deployment",
           "s3Key": "amplify-builds/hasamplifyRestApiLambda-7649597962315a79732b-build.zip"
         }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3sv7v2bjs1q1w",
+          "type": "manual"
+        }
       }
     }
   }
