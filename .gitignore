@@ -43,3 +43,12 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+
+/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/  # Ignore Jupyter Notebook checkpoints
+/data/              # Directory for data files (if used)

@@ -29,6 +29,8 @@ import fanOffIcon from './icons/fanOff.png';
 import bulbOnIcon from './icons/bulbOn.png';
 import bulbOffIcon from './icons/bulbOff.png'; 
 
+import { createDeviceTimeStamp } from './graphql/mutations';
+
 Amplify.configure(awsExports);
 
 const apiUrl = 'https://wa21lwv9da.execute-api.us-west-2.amazonaws.com/dev';
@@ -77,23 +79,30 @@ function App() {
         
         const status = device.status;
         const deviceId = device.id;
-        // await sendMessageToDevice(deviceId, status);
-        // await API.post('apice982f9a','',{
-        //   body: JSON.stringify({ deviceId: deviceId, status }),
-        // })
+
         console.log('Sending request with deviceId:', deviceId, 'and status:', status);
         const response = await axios.post(`${apiUrl}/device/${deviceId}/status/${status}`);
         console.log('API Response:', response.data);
+
+        // New code to record device switch events
+        const user = await Auth.currentAuthenticatedUser();
+        const timestampEntry = {
+          deviceID: deviceId,
+          userID: user.attributes.sub, // Assuming user is authenticated
+          timestamp: new Date().toISOString(), // Use the current timestamp
+          eventStatus: status,
+        };
+
+        await API.graphql(graphqlOperation(createDeviceTimeStamp, { input: timestampEntry }));
+    // End of new code
 
         const input1 = {
                 id: device.id, // Make sure to include the device ID
                 status: device.status, // Update the status
                 // Add other fields if necessary
               };
-        // const deviceData = await API.graphql(graphqlOperation(updateDevice, { input: device }));
         console.log(device.status);
 
-        // const deviceData = await API.graphql({query: mutations.updateDevice, variables: {input: input1}});
         const deviceData = await API.graphql({query: mutations.updateDevice, variables: {input: input1}});
         console.log(device.status);
         
@@ -102,6 +111,7 @@ function App() {
         
         deviceList[idx] = deviceData.data.updateDevice;
         setDevices(deviceList);
+
     } catch (error) {
         console.log('error on switching On/Off device', error);
     }
