@@ -1,0 +1,22 @@
+{
+    "dev": {
+        "app_function": "lambda_function.app",
+        "aws_region": "us-west-2",
+        "profile_name": "has-fyp-amplify-user",
+        "project_name": "ml-model",
+        "runtime": "python3.10",
+        "s3_bucket": "zappa-80xsbo585",
+        "layers":["arn:aws:lambda:us-west-2:037767305626:layer:diff-packages:2",
+        "arn:aws:lambda:us-west-2:037767305626:layer:sickit-learn-layer:1"],
+        "events": [{
+            "function": "ml-model-dev",
+            "event_source": {
+                "type": "dynamodb",
+                "arn": "arn:aws:dynamodb:us-west-2:037767305626:table/DeviceTimeStamp-zvvc26kofnethfd47fmdbb2skm-dev/stream/2023-10-25T16:09:34.987"
+            }
+        }],
+        "keep_warm": false,
+        "exclude": ["tests*", "*.md", "docs", "examples"]
+
+    }
+}
