@@ -37,8 +37,8 @@ def send_scheduled_notification():
         end_timestamp_pakistan = end_timestamp_utc.replace(tzinfo=pytz.utc).astimezone(pakistan_timezone)
 
         # Calculate the start time (6 hours ago)
-        # start_timestamp_pakistan = end_timestamp_pakistan - timedelta(hours=5, days=1)
-        start_timestamp_pakistan = end_timestamp_pakistan - timedelta(hours=5)
+        start_timestamp_pakistan = end_timestamp_pakistan - timedelta(hours=5, days=1)
+        # start_timestamp_pakistan = end_timestamp_pakistan - timedelta(hours=5)
 
         # Format the timestamps for the Timestream query
         formatted_start_timestamp = start_timestamp_pakistan.strftime('%Y-%m-%d %H:%M:%S.%f')[:-3] + '000000'
