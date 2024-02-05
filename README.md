@@ -4,6 +4,7 @@ A lightweight, hybrid application that can be accessed from a mobile device or w
 https://dev.d3sv7v2bjs1q1w.amplifyapp.com/
 
 
+<b>
 **Create Account**
 
 ![image](https://github.com/fatimabutt1899/has-amplify-react-app-2/assets/66645119/86cb22aa-df17-4cdb-bb1f-446a661c82af)
