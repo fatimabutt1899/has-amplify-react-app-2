@@ -8,6 +8,8 @@ https://dev.d3sv7v2bjs1q1w.amplifyapp.com/
 ## **Create Account**
 ![image](https://github.com/fatimabutt1899/has-amplify-react-app-2/assets/66645119/86cb22aa-df17-4cdb-bb1f-446a661c82af)
 
+After creating an account, you **will not see any devices** as no device is registered on your email.
+
 <br>
 
 ## **Sign In**
